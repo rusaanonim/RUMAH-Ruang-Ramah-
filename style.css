@@ -1,0 +1,123 @@
+/* Menggunakan font Poppins yang modern dan ramah */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    /* Warna latar belakang diambil dari warna cream pada logo */
+    background-color: #FCFAF0; 
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Scroll Snapping agar persis seperti LINE/Tiktok web */
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.panel {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+/* === Styling Hero Section === */
+.hero .logo {
+    max-width: 350px;
+    margin-bottom: 1rem;
+    border-radius: 15px; /* Jika logomu kotak, ini memperhalus sudutnya */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #3B82F6; /* Biru dari huruf R */
+    margin-bottom: -10px;
+}
+
+.hero .sub-title {
+    font-size: 1.5rem;
+    color: #E86A33; /* Orange dari tulisan Ruang Ramah */
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero .jargon {
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+/* Animasi penunjuk arah scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #22C55E; /* Hijau dari huruf u */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* === Styling About Us Section === */
+.about h2 {
+    font-size: 2.8rem;
+    color: #EF4444; /* Merah dari huruf m */
+    margin-bottom: 1.5rem;
+}
+
+.about-content {
+    max-width: 800px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact h2 {
+    font-size: 2.8rem;
+    color: #EAB308; /* Kuning dari huruf h */
+}
+
+/* === Kelas Interaktif untuk Efek Muncul (Fade In) === */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay kemunculan agar terkesan berurutan */
+.hero .logo.show { transition-delay: 0.1s; }
+.hero h1.show { transition-delay: 0.3s; }
+.hero .sub-title.show { transition-delay: 0.5s; }
+.hero .jargon.show { transition-delay: 0.7s; }
+.hero .scroll-indicator.show { transition-delay: 1s; }
